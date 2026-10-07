@@ -32,6 +32,21 @@
 - 🏠 홈페이지: https://mldict.net
 - ✍️ 기술 블로그: https://wikidocs.net/blog/@mldict/
 
+
+## 📘 책 단원별 소스코드 (`book/`)
+
+책 **[Zero to 머신러닝 딥러닝 Master](https://wikidocs.net/book/21464)** 원고의 코드 블록을 단원(절)별로 추출해 [`book/`](book/) 폴더에 정리했습니다. 코드가 있는 절 157개마다 실행 스크립트(`.py`), 블록당 셀 1개인 노트북(`.ipynb`), 설명 `README.md` 가 있고, 공통 패키지는 [`book/requirements.txt`](book/requirements.txt) 에 있습니다. CPU 검증 결과 105개 절이 그대로 실행되며, 나머지는 외부 데이터·API 키·앞 절 코드가 필요한 경우로 각 README 에 이유를 적었습니다.
+
+| 권 | 제목 | 코드가 있는 절 | 코드 블록 |
+|---|---|---|---|
+| 00 | [비전공자 처음부터 — 수포자 훑어보기](book/00-math-overview-for-beginners/) | 6 | 31 |
+| 01 | [수포자들을 위한 머신러닝 수학 완전기초와 파이썬 맛보기](book/01-ml-math-basics-python/) | 17 | 176 |
+| 02 | [🐍 헬로 파이썬 — 파이썬의 탄생부터 NumPy · Pandas · Plotly까지](book/02-hello-python/) | 9 | 140 |
+| 03 | [초기(전통적) 머신러닝으로 기초 다지기](book/03-classic-ml/) | 62 | 353 |
+| 04 | [신경망과 딥러닝 이론](book/04-neural-networks-deep-learning/) | 63 | 263 |
+
+빠른 시작: `pip install -r book/requirements.txt` 후 원하는 절 폴더에서 `python <파일>.py` — 자세한 내용은 [`book/README.md`](book/README.md).
+
 ## 사용 방법
 
 1. `TOC.md` 파일에서 목차 구조를 정의하세요.
