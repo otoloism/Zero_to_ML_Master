@@ -1,0 +1,36 @@
+# 「Zero to 머신러닝 딥러닝 Master」 book/ 코드 실행용 패키지
+# 검증 환경: Python 3.12 · CPU (자세한 버전은 book/README.md 참고)
+#
+# PyTorch 는 CPU 버전이면 충분합니다. 용량을 줄이려면 먼저:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+# 그다음:
+#   pip install -r requirements.txt
+
+numpy
+pandas
+matplotlib
+seaborn
+plotly
+scipy
+sympy
+scikit-learn
+openpyxl          # 02-08 엑셀 읽기/쓰기
+xgboost           # 03-09
+lightgbm          # 03-09
+imbalanced-learn  # 03-99-04 (import 이름: imblearn)
+gensim            # 03-99-05 Word2Vec
+nltk              # 04-04-10, 04-05-05 (데이터는 nltk.download(...) 로 따로 받아야 함)
+tiktoken          # 04-07-03
+torch
+torchvision       # 04-06 (MNIST)
+
+# ── 선택: 특정 절에서만 필요 · 용량이 크거나 API 키/GPU/Java 등 외부 환경 필요 (검증 시 미설치) ──
+# tensorflow jax                       # 00-04 프레임워크 비교 블록
+# gym                                  # 04-02-08 DQN
+# cupy-cuda12x                         # 04-03-05 GPU 전환 (NVIDIA GPU 필요)
+# dezero                               # 04-03-02 (04-03장에서 직접 만드는 프레임워크의 패키지판)
+# spacy transformers                   # 04-05-04 개체명 인식 (+ spaCy 언어 모델 다운로드)
+# konlpy                               # 04-05-05, 04-05-06 한국어 형태소 분석 (Java 필요)
+# openai anthropic                     # 04-07-01, 04-07-03 (API 키 필요)
+# langchain langchain-core langchain-community langchain-openai langchain-anthropic langchain-aws langchain-huggingface
+# python-dotenv llmlingua transformers accelerate   # 04-08장 (API 키 / 로컬 모델 필요)
