@@ -1,0 +1,60 @@
+# -*- coding: utf-8 -*-
+"""
+04-02-07 신경망과 Q 러닝 — 함수 근사로 가는 길
+
+출처: 「Zero to 머신러닝 딥러닝 Master」 (WikiDocs https://wikidocs.net/book/21464)
+원고: 04권  신경망과 딥러닝 이론/04-02장 강화 학습 알고리즘/04-02-07 신경망과 Q 러닝 — 함수 근사로 가는 길.md
+
+책에 실린 코드 블록을 순서대로 모은 스크립트입니다. (# %% 셀 구분은 VS Code / Jupytext 에서 셀로 인식됩니다)
+"""
+
+# %% [Block 1] 04-02-07-A self.Q = {} 라는 딕셔너리의 함정 — 각 환경의 상태 수를 비교해 봅시다
+# 각 환경의 상태 수를 비교해 봅시다
+환경들 = {
+    "4×4 그리드월드": 16,
+    "체스":           10**47,
+    "바둑":           10**170,
+    "아타리 (픽셀)": 256**(84*84),  # 84×84 그레이스케일
+}
+
+for 이름, 상태수 in 환경들.items():
+    if 상태수 < 1000:
+        print(f"{이름:<20s}: {상태수}개 → Q 테이블 OK ✅")
+    else:
+        print(f"{이름:<20s}: 10^{len(str(상태수))-1}개 이상 → Q 테이블 불가능 ❌ → 신경망 필요!")
+
+
+# %% [Block 2] 04-02-07-C DeZero(04-03장)로 QNet 구현 — 04-01장 도구가 그대로! — DeZero(04-03장) 스타일의 Q 신경망
+# DeZero(04-03장) 스타일의 Q 신경망
+
+class QNet(Model):
+    """Q값을 출력하는 신경망.
+    비유: '상태(입력)를 보고 각 행동의 가치(출력)를 예측하는 감정사'"""
+
+    def __init__(self, action_size):
+        super().__init__()
+        self.l1 = Linear(100)           # 은닉층: 100개 뉴런
+        self.l2 = Linear(action_size)    # 출력층: 행동 수만큼
+
+    def forward(self, x):
+        x = relu(self.l1(x))            # 04-01-02: ReLU 활성화
+        return self.l2(x)                # 출력: 항등함수 (Softmax 아님!)
+
+def update(qnet, state, action, reward, next_state, done, gamma=0.9):
+    """TD 타깃을 '정답'으로, Q 출력을 '예측'으로 → MSE 회귀 문제!
+    비유: '선생님(TD 타깃)이 내 답(Q 출력)과 비교해서 점수를 매기는 것'"""
+
+    q = qnet(state)[action]                  # Q(s, a; w) 예측값
+
+    if done:
+        target = reward                       # 에피소드 끝: 보상만
+    else:
+        next_q = qnet(next_state).max()      # max_a' Q(s',a'; w) ← 04-02-06의 max!
+        target = reward + gamma * next_q
+
+    target = Variable(target)                # 04-03장: 미분 그래프에서 제외 (정답 취급)
+    loss = mean_squared_error(target, q)      # 04-01-03: MSE 손실
+
+    qnet.cleargrads()                         # ③ 기울기 초기화
+    loss.backward()                            # ④ 역전파 (04-03장: 한 줄!)
+    optimizer.update()                          # ⑤ 파라미터 갱신
