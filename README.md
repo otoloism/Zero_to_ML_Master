@@ -9,7 +9,7 @@
 | # | 주제 | 코드 | Medium 글 | 책 원문 |
 |---|---|---|---|---|
 | 03 | 벡터 — 덧셈·Norm·내적·코사인 유사도 | [03-vectors](medium-series/03-vectors/) | [읽기](https://medium.com/p/9a7f826c3b2e) | [00-01](https://wikidocs.net/439839) |
-| 04 | 행렬 — shape·행렬 곱셈·역행렬 | [04-matrices](medium-series/04-matrices/) | TODO: 게시 후 URL | [00-02](https://wikidocs.net/439843) |
+| 04 | 행렬 — shape·행렬 곱셈·역행렬 | [04-matrices](medium-series/04-matrices/) | [Medium](https://medium.com/p/00aed694cc8d) | [00-02](https://wikidocs.net/439843) |
 | 05 | 최소제곱법과 정규방정식 | [05-least-squares](medium-series/05-least-squares/) | TODO: 게시 후 URL | [00-03](https://wikidocs.net/439841) |
 | 06 · 1부 | 미분 — 수치미분·연쇄법칙·그래디언트 | [06-1-derivatives](medium-series/06-1-derivatives/) | TODO: 게시 후 URL | [00-04](https://wikidocs.net/439840) |
 | 06 · 2부 | 경사하강법 — 학습률·선형회귀·자동미분 | [06-2-gradient-descent](medium-series/06-2-gradient-descent/) | TODO: 게시 후 URL | [00-04](https://wikidocs.net/439840) |
