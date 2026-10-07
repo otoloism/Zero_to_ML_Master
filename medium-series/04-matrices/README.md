@@ -11,7 +11,7 @@
 
 | | |
 |---|---|
-| 📝 Medium 글 | **TODO: Medium 게시 후 URL 입력** (`https://medium.com/p/...`) |
+| 📝 Medium 글 | [행렬 기초 — shape·행렬 곱셈·역행렬을 성적표로 이해하기](https://medium.com/p/00aed694cc8d) |
 | 📘 책 원문 페이지 | [00-02 행렬 — 성적표는 곧 행렬이다](https://wikidocs.net/439843) |
 | ✍️ 블로그 글 | [https://wikidocs.net/blog/@mldict/32648/](https://wikidocs.net/blog/@mldict/32648/) |
 
