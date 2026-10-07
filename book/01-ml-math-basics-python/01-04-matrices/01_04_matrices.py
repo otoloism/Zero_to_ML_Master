@@ -1,0 +1,129 @@
+# -*- coding: utf-8 -*-
+"""
+01-04행렬— 숫자를 표로 정리하기
+
+출처: 「Zero to 머신러닝 딥러닝 Master」 (WikiDocs https://wikidocs.net/book/21464)
+원고: 01권  수포자들을 위한 머신러닝 수학 완전기초와 파이썬 맛보기/01-04행렬— 숫자를 표로 정리하기.md
+
+책에 실린 코드 블록을 순서대로 모은 스크립트입니다. (# %% 셀 구분은 VS Code / Jupytext 에서 셀로 인식됩니다)
+"""
+
+# %% [Block 1] 1단계 🟢⭐ 첫 번째 얼굴 — 행렬은 표다
+import numpy as np
+
+X = np.array([[175, 70, 25],      # 1행: 학생1 (키, 몸무게, 나이)
+              [162, 55, 22],      # 2행: 학생2
+              [180, 78, 30]])     # 3행: 학생3
+
+print("행렬 X:\n", X)
+print("모양(shape):", X.shape, "→ 3행 3열")
+print("X[1, 0] =", X[1, 0], "(2번째 학생의 키)")
+print("2번째 행 전체 =", X[1])
+print("1번째 열 전체 =", X[:, 0])
+
+
+# %% [Block 2] 1.5단계 🟢⭐ 행렬 = 함수 — 익숙한 $f(x)=4x$에서 출발하기
+import numpy as np
+
+# ── 1차원: 숫자를 받아 숫자를 돌려주는 함수 ──
+def f(x):
+    return 4 * x            # 규칙: 4를 곱한다
+
+print("f(3) =", f(3))       # 숫자 → 숫자
+print("f(5) =", f(5))
+
+# ── 행렬: 벡터를 받아 벡터를 돌려주는 함수 ──
+A = np.array([[2, 0],
+              [0, 3]])      # 규칙: x는 2배, y는 3배
+
+벡터 = np.array([1, 1])
+print("A @ 벡터 =", A @ 벡터)   # 벡터 → 벡터
+
+# 규칙(A)은 그대로, 입력만 바꿔 본다
+print("A @ [2,1] =", A @ np.array([2, 1]))
+print("A @ [0,4] =", A @ np.array([0, 4]))
+
+
+# %% [Block 3] 3단계 🟢 가장 쉬운 것부터 — 덧셈과 스칼라곱
+import numpy as np
+
+A = np.array([[1, 2], [3, 4]])
+B = np.array([[5, 6], [7, 8]])
+
+print("A + B =\n", A + B)
+print("2 * A =\n", 2 * A)
+print("A * B (원소별 곱) =\n", A * B)
+print("A @ B (행렬 곱) =\n", A @ B)
+
+
+# %% [Block 4] 📖 읽는 법 ② — "열들의 가중합" (의미가 보이는 관점)
+import numpy as np
+
+M = np.array([[2, 0],
+              [1, 3]])
+v = np.array([1, 2])
+
+# 관점 1 — 행과 벡터의 내적
+row_view = np.array([np.dot(M[0], v), np.dot(M[1], v)])
+
+# 관점 2 — 열들의 가중합 (v의 성분이 각 열에 곱해짐)
+col_view = v[0] * M[:, 0] + v[1] * M[:, 1]
+
+print("관점 1 (행 내적)   :", row_view)
+print("관점 2 (열 가중합) :", col_view)
+print("NumPy 결과         :", M @ v)
+print("세 결과가 모두 같은가?", np.array_equal(row_view, col_view) and np.array_equal(col_view, M @ v))
+
+
+# %% [Block 5] 6단계 🔵⭐ 왜 $AB \\neq BA$인가 — 순서가 바뀌면 결과가 바뀐다 \[벽 ② 격파\]
+import numpy as np
+
+A = np.array([[1, 2], [3, 4]])
+B = np.array([[5, 6], [7, 8]])
+
+print("A @ B =\n", A @ B)
+print("B @ A =\n", B @ A)
+print("두 결과가 같은가?", np.array_equal(A @ B, B @ A))
+
+R = np.array([[0, -1], [1, 0]])      # 90도 회전
+S = np.array([[1,  1], [0, 1]])      # 전단(기울이기)
+print("\n전단 먼저, 회전 나중 (R @ S) =\n", R @ S)
+print("회전 먼저, 전단 나중 (S @ R) =\n", S @ R)
+
+
+# %% [Block 6] 7단계 🔵 추상성 깨기 — 연립방정식·역행렬·전치를 손에 쥐다 \[벽 ③ 격파\]
+import numpy as np
+
+# 연립방정식   2x +  y = 5
+#              x + 3y = 10
+M = np.array([[2, 1],
+              [1, 3]])
+b = np.array([5, 10])
+
+sol = np.linalg.solve(M, b)                # Mv = b 를 푸는 함수
+print("해 (x, y) =", sol)
+print("검산 M @ sol =", M @ sol, "→ b와 같은가?", np.allclose(M @ sol, b))
+
+M_inv = np.linalg.inv(M)                   # 역행렬
+print("\n역행렬 M⁻¹ =\n", M_inv)
+print("M⁻¹ @ M =\n", np.round(M_inv @ M, 10), "← 단위행렬")
+print("\n전치 M.T =\n", M.T)
+
+
+# %% [Block 7] 8단계 🔵🚀 ML에서의 행렬 — 순전파와 배치, 그리고 shape 설계 \[벽 ③ 격파\]
+import numpy as np
+
+W = np.array([[0.5, 0.2],      # 입력1 → 출력1, 출력2
+              [0.3, 0.8],      # 입력2 → 출력1, 출력2
+              [0.1, 0.4]])     # 입력3 → 출력1, 출력2
+
+x = np.array([1, 2, 3])                    # 데이터 1개 (3차원)
+print("입력 1개 :", x.shape, "@", W.shape, "→", (x @ W).shape)
+print("출력      :", x @ W)
+
+X = np.array([[1, 2, 3],                   # 데이터 4개를 한 번에 (배치)
+              [2, 0, 1],
+              [0, 1, 4],
+              [3, 3, 3]])
+print("\n배치 4개 :", X.shape, "@", W.shape, "→", (X @ W).shape)
+print("출력      :\n", np.round(X @ W, 2))
