@@ -1,0 +1,4 @@
+numpy>=1.24
+torch>=2.0
+tensorflow>=2.15
+jax[cpu]>=0.4
