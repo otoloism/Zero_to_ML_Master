@@ -11,7 +11,7 @@
 
 | | |
 |---|---|
-| 📝 Medium 글 | **TODO: Medium 게시 후 URL 입력** (`https://medium.com/p/...`) |
+| 📝 Medium 글 | [최소제곱법과 정규방정식 — 완벽한 답이 없을 때 최선의 답 찾기](https://medium.com/p/933746f6a6a1) |
 | 📘 책 원문 페이지 | [00-03 연립방정식 — "x가 뭔지 맞춰보세요" 게임](https://wikidocs.net/439841) |
 | ✍️ 블로그 글 | [https://wikidocs.net/blog/@mldict/32649/](https://wikidocs.net/blog/@mldict/32649/) |
 
