@@ -11,7 +11,7 @@
 
 | | |
 |---|---|
-| 📝 Medium 글 | **TODO: Medium 게시 후 URL 입력** (`https://medium.com/p/...`) |
+| 📝 Medium 글 | [경사하강법 완전 정복 — 안개 낀 산에서 가장 낮은 곳 찾기 (2부)](https://medium.com/p/746d28a12bdb) |
 | 📘 책 원문 페이지 | [00-04 미분·경사하강법 — 안개 낀 산에서 내려오기 (2부)](https://wikidocs.net/439840) |
 | ✍️ 블로그 글 | [https://wikidocs.net/blog/@mldict/32650/](https://wikidocs.net/blog/@mldict/32650/) |
 
