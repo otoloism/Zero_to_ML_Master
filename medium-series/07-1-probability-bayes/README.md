@@ -11,7 +11,7 @@ P(A)=n(A)/n(Ω) 와 대수의 법칙을 주사위 시뮬레이션으로 확인�
 
 | | |
 |---|---|
-| 📝 Medium 글 | **TODO: Medium 게시 후 URL 입력** (`https://medium.com/p/...`) |
+| 📝 Medium 글 | [베이즈 정리 쉽게 이해하기 — 병원 검사의 함정 (1부: 확률·조건부 확률)](https://medium.com/p/4196de21816c) |
 | 📘 책 원문 페이지 | [00-05 확률·베이즈 정리 — 병원 검사의 함정 (1부)](https://wikidocs.net/439838) |
 | ✍️ 블로그 글 | [https://wikidocs.net/blog/@mldict/32651/](https://wikidocs.net/blog/@mldict/32651/) |
 
