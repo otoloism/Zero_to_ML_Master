@@ -11,7 +11,7 @@
 
 | | |
 |---|---|
-| 📝 Medium 글 | **TODO: Medium 게시 후 URL 입력** (`https://medium.com/p/...`) |
+| 📝 Medium 글 | [SVD 추천 시스템부터 미니 신경망까지 — 수포자 수학 6개 장을 하나로 (2부)](https://medium.com/p/48039fdf6432) |
 | 📘 책 원문 페이지 | [00-06 SVD·PCA — 300페이지 책을 3페이지로 (2부)](https://wikidocs.net/439842) |
 | ✍️ 블로그 글 | [https://wikidocs.net/blog/@mldict/32652/](https://wikidocs.net/blog/@mldict/32652/) |
 
