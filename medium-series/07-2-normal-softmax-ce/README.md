@@ -11,7 +11,7 @@
 
 | | |
 |---|---|
-| 📝 Medium 글 | **TODO: Medium 게시 후 URL 입력** (`https://medium.com/p/...`) |
+| 📝 Medium 글 | [정규분포·소프트맥스·교차 엔트로피 — AI는 확률로 대답한다 (2부)](https://medium.com/p/2e1e9ef32623) |
 | 📘 책 원문 페이지 | [00-05 확률·베이즈 정리 — 병원 검사의 함정 (2부)](https://wikidocs.net/439838) |
 | ✍️ 블로그 글 | [https://wikidocs.net/blog/@mldict/32651/](https://wikidocs.net/blog/@mldict/32651/) |
 
