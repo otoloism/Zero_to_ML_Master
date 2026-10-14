@@ -11,7 +11,7 @@
 
 | | |
 |---|---|
-| 📝 Medium 글 | **TODO: Medium 게시 후 URL 입력** (`https://medium.com/p/...`) |
+| 📝 Medium 글 | [머신러닝에 수학이 왜 필요할까? — 라면과 요리로 보는 AI 수학 공부법](https://medium.com/p/ce75db4be2c0) |
 | 📘 책 원문 페이지 | [01-01 왜 수학인가? — 요리를 배울 것인가? 라면만 끓이다 갈 것인가!](https://wikidocs.net/439746) |
 | ✍️ 블로그 글 | [https://wikidocs.net/blog/@mldict/32654/](https://wikidocs.net/blog/@mldict/32654/) |
 
