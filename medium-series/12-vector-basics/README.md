@@ -11,7 +11,7 @@
 
 | | |
 |---|---|
-| 📝 Medium 글 | **TODO: Medium 게시 후 URL 입력** (`https://medium.com/p/...`) |
+| 📝 Medium 글 | [벡터 완전기초 — 화살표로 이해하는 노름·내적·코사인 유사도](https://medium.com/p/8b191394a4e5) |
 | 📘 책 원문 페이지 | [01-03 벡터 — 방향과 크기를 가진 화살표](https://wikidocs.net/439747) |
 | ✍️ 블로그 글 | [wikidocs.net/blog/@mldict](https://wikidocs.net/blog/@mldict/) (이 편의 블로그 글은 아직 없음) |
 
