@@ -11,7 +11,7 @@
 
 | | |
 |---|---|
-| 📝 Medium 글 | **TODO: Medium 게시 후 URL 입력** (`https://medium.com/p/...`) |
+| 📝 Medium 글 | [https://medium.com/p/65cc9a4d38e4](https://medium.com/p/65cc9a4d38e4) |
 | 📘 책 원문 페이지 | [01-04 행렬 — 숫자를 표로 정리하기](https://wikidocs.net/439753) |
 | ✍️ 블로그 글 | [wikidocs.net/blog/@mldict](https://wikidocs.net/blog/@mldict/) (이 편의 블로그 글은 아직 없음) |
 
