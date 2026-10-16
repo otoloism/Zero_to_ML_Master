@@ -27,8 +27,14 @@
 | 18 | 행렬식(Determinant) | [18-determinant](medium-series/18-determinant/) | TODO: 게시 후 URL | [01-06-02](https://wikidocs.net/439761) |
 | 19 | 역행렬 — 가우스-조던·수반행렬·성질 | [19-inverse-matrix](medium-series/19-inverse-matrix/) | TODO: 게시 후 URL | [01-06-03](https://wikidocs.net/439760) |
 | 20 | 고유값·고유벡터·대각화·SVD | [20-eigen-diagonalization-svd](medium-series/20-eigen-diagonalization-svd/) | TODO: 게시 후 URL | [01-07](https://wikidocs.net/439755) |
+| 21 | 함수와 합성함수 — 층 쌓기·활성화 함수·연쇄법칙·기울기 소실 | [21-functions-composition](medium-series/21-functions-composition/) | TODO: 게시 후 URL | [01-08](https://wikidocs.net/439745) |
+| 22 | 미분 기초 — 순간 기울기·거듭제곱 규칙·골짜기 내려가기 | [22-derivative-basics](medium-series/22-derivative-basics/) | TODO: 게시 후 URL | [01-09](https://wikidocs.net/439748) |
+| 23 · 1부 | 편미분·그래디언트 — 경사하강법·옵티마이저 클래스 | [23-1-partial-derivative-gradient](medium-series/23-1-partial-derivative-gradient/) | TODO: 게시 후 URL | [01-10](https://wikidocs.net/439754) |
+| 23 · 2부 | 학습률 비교·지역 최솟값·수치 그래디언트 | [23-2-learning-rate-local-minima](medium-series/23-2-learning-rate-local-minima/) | TODO: 게시 후 URL | [01-10](https://wikidocs.net/439754) |
 | 24 · 1부 | 적분 — 시그마 for 문·SymPy 원시함수·검산 | [24-1-integral-riemann-ftc](medium-series/24-1-integral-riemann-ftc/) | TODO: 게시 후 URL | [01-11](https://wikidocs.net/439757) |
 | 24 · 2부 | 적분 — 리만 합·사다리꼴·확률·기댓값·몬테카를로 | [24-2-integral-probability-expectation](medium-series/24-2-integral-probability-expectation/) | TODO: 게시 후 URL | [01-11](https://wikidocs.net/439757) |
+| 25 · 1부 | 확률과 통계 — 평균·분산(ddof)·공분산·왜도·소프트맥스 | [25-1-descriptive-statistics](medium-series/25-1-descriptive-statistics/) | TODO: 게시 후 URL | [01-12](https://wikidocs.net/439756) |
+| 25 · 2부 | 정규분포·MLE·t-검정·신뢰구간·데이터 진단 | [25-2-normal-bayes-mle-testing](medium-series/25-2-normal-bayes-mle-testing/) | TODO: 게시 후 URL | [01-12](https://wikidocs.net/439756) |
 
 - 📘 책 (WikiDocs): https://wikidocs.net/book/21464
 - 🏠 홈페이지: https://mldict.net
