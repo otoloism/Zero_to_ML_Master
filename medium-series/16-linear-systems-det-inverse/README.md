@@ -11,7 +11,7 @@
 
 | | |
 |---|---|
-| 📝 Medium 글 | **TODO: Medium 게시 후 URL 입력** (`https://medium.com/p/...`) |
+| 📝 Medium 글 | [연립방정식·행렬식·역행렬 한 번에 — det(A) = 0이 말해 주는 것](https://medium.com/p/e4bcb9095a23) |
 | 📘 책 원문 페이지 | [01-06 연립방정식·행렬식·역행렬](https://wikidocs.net/439752) |
 | ✍️ 블로그 글 | [wikidocs.net/blog/@mldict](https://wikidocs.net/blog/@mldict/) (이 편의 블로그 글은 아직 없음) |
 
