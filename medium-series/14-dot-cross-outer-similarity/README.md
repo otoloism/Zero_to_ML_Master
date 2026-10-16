@@ -11,7 +11,7 @@
 
 | | |
 |---|---|
-| 📝 Medium 글 | **TODO: Medium 게시 후 URL 입력** (`https://medium.com/p/...`) |
+| 📝 Medium 글 | [https://medium.com/p/18f28040516a](https://medium.com/p/18f28040516a) |
 | 📘 책 원문 페이지 | [01-05 행렬 내적·외적·유사도 행렬](https://wikidocs.net/439750) |
 | ✍️ 블로그 글 | [wikidocs.net/blog/@mldict](https://wikidocs.net/blog/@mldict/) (이 편의 블로그 글은 아직 없음) |
 
