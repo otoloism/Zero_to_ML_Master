@@ -11,7 +11,7 @@ SymPy로 1차-2차 연립방정식을 풀고, 원과 직선의 교점 개수(0·
 
 | | |
 |---|---|
-| 📝 Medium 글 | **TODO: Medium 게시 후 URL 입력** (`https://medium.com/p/...`) |
+| 📝 Medium 글 | [https://medium.com/p/4286d41c05eb](https://medium.com/p/4286d41c05eb) |
 | 📘 책 원문 페이지 | [01-06-01 연립방정식의 의미와 풀이법 — 대수와 기하를 잇는 다리](https://wikidocs.net/439759) |
 | ✍️ 블로그 글 | [wikidocs.net/blog/@mldict](https://wikidocs.net/blog/@mldict/) (이 편의 블로그 글은 아직 없음) |
 
