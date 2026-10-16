@@ -27,6 +27,8 @@
 | 18 | 행렬식(Determinant) | [18-determinant](medium-series/18-determinant/) | TODO: 게시 후 URL | [01-06-02](https://wikidocs.net/439761) |
 | 19 | 역행렬 — 가우스-조던·수반행렬·성질 | [19-inverse-matrix](medium-series/19-inverse-matrix/) | TODO: 게시 후 URL | [01-06-03](https://wikidocs.net/439760) |
 | 20 | 고유값·고유벡터·대각화·SVD | [20-eigen-diagonalization-svd](medium-series/20-eigen-diagonalization-svd/) | TODO: 게시 후 URL | [01-07](https://wikidocs.net/439755) |
+| 24 · 1부 | 적분 — 시그마 for 문·SymPy 원시함수·검산 | [24-1-integral-riemann-ftc](medium-series/24-1-integral-riemann-ftc/) | TODO: 게시 후 URL | [01-11](https://wikidocs.net/439757) |
+| 24 · 2부 | 적분 — 리만 합·사다리꼴·확률·기댓값·몬테카를로 | [24-2-integral-probability-expectation](medium-series/24-2-integral-probability-expectation/) | TODO: 게시 후 URL | [01-11](https://wikidocs.net/439757) |
 
 - 📘 책 (WikiDocs): https://wikidocs.net/book/21464
 - 🏠 홈페이지: https://mldict.net
