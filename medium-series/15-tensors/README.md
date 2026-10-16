@@ -11,7 +11,7 @@
 
 | | |
 |---|---|
-| 📝 Medium 글 | **TODO: Medium 게시 후 URL 입력** (`https://medium.com/p/...`) |
+| 📝 Medium 글 | https://medium.com/p/baea13461077 |
 | 📘 책 원문 페이지 | [01-05-01 텐서(Tensor)란 뭘까 — 숫자 상자의 차원 여행](https://wikidocs.net/439758) |
 | ✍️ 블로그 글 | [wikidocs.net/blog/@mldict](https://wikidocs.net/blog/@mldict/) (이 편의 블로그 글은 아직 없음) |
 
