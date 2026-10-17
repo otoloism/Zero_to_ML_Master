@@ -8,12 +8,6 @@
 책에 실린 코드 블록을 순서대로 모은 스크립트입니다. (# %% 셀 구분은 VS Code / Jupytext 에서 셀로 인식됩니다)
 """
 
-# %% [Block 0] [추가] 책에서는 앞 절에서 import 한 모듈 — 단독 실행을 위해 보충 (원문에는 없음)
-import torch
-import torch.nn as nn
-import torch.nn.functional as F
-
-
 # %% [Block 1] 구현 관점 — MNIST 라벨 조건 (방법 ①)
 class ConditionalUNet(nn.Module):
     """04-06-09의 UNet에 클래스 조건 c를 추가한 버전.

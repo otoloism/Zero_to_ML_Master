@@ -34,14 +34,15 @@ python 04_06_10_cfg_stable_diffusion.py
 
 ## 검증 결과
 
-- 상태: **🧩 문맥 필요(조각)** (CPU, 제한 시간 120초, `MPLBACKEND=Agg`)
+- 상태: **🧩 문맥 필요(조각)** (CPU, 제한 시간 120초, `MPLBACKEND=Agg`, 2026-10-17 재검증)
 - 상세: `vae` 이(가) 이 절 안에서 정의되지 않습니다 — 데이터·변수·클래스를 미리 준비했다고 가정한 설명용 코드 조각입니다.
-- 스크립트가 멈춘 지점: `NameError: name 'vae' is not defined`
-- 블록별 실행(오류가 나도 다음 블록 계속): 6/8 블록 성공
+- 스크립트가 멈춘 지점: `NameError: name 'nn' is not defined`
+- 블록별 실행(오류가 나도 다음 블록 계속): 2/8 블록 성공
 
 ## 추출 시 수정 사항
 
-- Block 0 추가: `import torch`, `import torch.nn as nn`, `import torch.nn.functional as F` — 책에서는 앞 절에서 import 했거나 뒤 블록에서야 import 하는 모듈이라, 단독 실행을 위해 보충했습니다.
+- 위키독스 페이지([wikidocs.net/439803](https://wikidocs.net/439803))의 코드 상자를 그대로 옮겼습니다 — 블록 1개 = 코드 상자 1개, 순서·내용 동일 (2026-10-17 페이지 기준 정렬). 출력 결과·mermaid 다이어그램·글자 표(ASCII) 상자는 코드 상자로 세지 않았습니다.
+- 예전에 넣었던 보충 import(`Block 0 [추가]`), 주석 처리, 오타 수정은 페이지와 1:1로 맞추기 위해 되돌렸습니다.
 
 ---
 

@@ -33,14 +33,15 @@ python 04_03_03_higher_order_diff_steps_25_36.py
 
 ## 검증 결과
 
-- 상태: **🧩 문맥 필요(조각)** (CPU, 제한 시간 120초, `MPLBACKEND=Agg`)
+- 상태: **🧩 문맥 필요(조각)** (CPU, 제한 시간 120초, `MPLBACKEND=Agg`, 2026-10-17 재검증)
 - 필요 사항: 앞 절 04-03-02 의 코드 실행 결과 (`Variable` 등) — 책이 '앞 절에서 만든 것을 그대로 쓴다'고 가정
 - 스크립트가 멈춘 지점: `NameError: name 'Variable' is not defined. Did you mean: 'callable'?`
 - 블록별 실행(오류가 나도 다음 블록 계속): 0/7 블록 성공
 
 ## 추출 시 수정 사항
 
-- Block 0 추가: `import numpy as np` — 책에서는 앞 절에서 import 했거나 뒤 블록에서야 import 하는 모듈이라, 단독 실행을 위해 보충했습니다.
+- 위키독스 페이지([wikidocs.net/439796](https://wikidocs.net/439796))의 코드 상자를 그대로 옮겼습니다 — 블록 1개 = 코드 상자 1개, 순서·내용 동일 (2026-10-17 페이지 기준 정렬). 출력 결과·mermaid 다이어그램·글자 표(ASCII) 상자는 코드 상자로 세지 않았습니다.
+- 예전에 넣었던 보충 import(`Block 0 [추가]`), 주석 처리, 오타 수정은 페이지와 1:1로 맞추기 위해 되돌렸습니다.
 
 ---
 

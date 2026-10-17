@@ -50,7 +50,7 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;03-07-02 | [콘텐츠 기반 추천 시스템 (Content Based Recommendation)](03-07-recommender-systems/03-07-02-content-based-recsys/) | 8 | ✅ 실행 OK |
 | &nbsp;&nbsp;&nbsp;&nbsp;03-07-03 | [협업 필터링 (Collaborative Filtering)](03-07-recommender-systems/03-07-03-collaborative-filtering/) | 7 | ✅ 실행 OK |
 | &nbsp;&nbsp;&nbsp;&nbsp;03-07-04 | [저차원 행렬분해와 평균 정규화 (Low Rank Matrix Factorization & Mean Normalization)](03-07-recommender-systems/03-07-04-low-rank-mean-normalization/) | 7 | ✅ 실행 OK |
-| &nbsp;&nbsp;&nbsp;&nbsp;03-07-05 | [콘텐츠 기반 추천 시스템 실습 (Content Based Recommendation with TMDB 5000)](03-07-recommender-systems/03-07-05-content-based-practice/) | 17 | ⏭️ 외부 요구사항 |
+| &nbsp;&nbsp;&nbsp;&nbsp;03-07-05 | [콘텐츠 기반 추천 시스템 실습 (Content Based Recommendation with TMDB 5000)](03-07-recommender-systems/03-07-05-content-based-practice/) | 17 | ❌ 실행 오류 |
 | &nbsp;&nbsp;&nbsp;&nbsp;03-07-06 | [협업 필터링 실습 — SGD 행렬 분해 (Matrix Factorization with Stochastic Gradient …](03-07-recommender-systems/03-07-06-cf-sgd-matrix-factorization/) | 15 | ⏭️ 외부 요구사항 |
 | 03-08 | [정규화 심화 및 대규모 학습 (Regularization & Large Scale Machine Learning)](03-08-advanced-regularization-large-scale/) | — | (하위 절 참고) |
 | &nbsp;&nbsp;&nbsp;&nbsp;03-08-01 | [L1 노름과 L2 노름 (L1 Norm & L2 Norm)](03-08-advanced-regularization-large-scale/03-08-01-l1-l2-norms/) | 5 | ✅ 실행 OK |

@@ -8,10 +8,6 @@
 책에 실린 코드 블록을 순서대로 모은 스크립트입니다. (# %% 셀 구분은 VS Code / Jupytext 에서 셀로 인식됩니다)
 """
 
-# %% [Block 0] [추가] 책에서는 앞 절에서 import 한 모듈 — 단독 실행을 위해 보충 (원문에는 없음)
-import numpy as np
-
-
 # %% [Block 1] 25~26단계 — 계산 그래프 시각화: Graphviz로 그림 그리기
 def get_dot_graph(output):
     """output에서 creator를 거슬러 올라가며 DOT 그래프 생성"""

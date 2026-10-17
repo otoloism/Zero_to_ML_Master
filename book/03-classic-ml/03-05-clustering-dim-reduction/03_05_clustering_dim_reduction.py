@@ -213,7 +213,7 @@ import numpy as np
 class PCA_from_scratch:
     """
     PCA(주성분분석) 직접 구현 클래스
-    
+
     학습 순서:
     1. 표준화 (fit)
     2. 공분산 행렬 계산
@@ -221,14 +221,14 @@ class PCA_from_scratch:
     4. 상위 k개 주성분 선택
     5. 투영 (transform) / 복원 (inverse_transform)
     """
-    
+
     def __init__(self, n_components):
         self.n_components = n_components   # 축소할 목표 차원 수
         self.components_ = None            # 주성분 벡터들 (저장 공간)
         self.explained_variance_ = None    # 각 주성분의 분산(고유값)
         self.explained_variance_ratio_ = None  # 설명 분산 비율
         self.mean_ = None                  # 학습 데이터의 평균 (복원시 필요)
-    
+
     def fit(self, X):
         """
         PCA 학습: 주성분 방향을 찾습니다
@@ -236,7 +236,7 @@ class PCA_from_scratch:
         """
         n, d = X.shape
         # n = 샘플 수, d = 특성(차원) 수
-        
+
         # ── 1단계: 평균 중심화 (Mean Centering) ──────────
         # 각 특성의 평균을 빼서 데이터 중심을 원점으로 이동
         # 이 단계가 없으면 공분산이 아닌 상관행렬이 됩니다
@@ -244,21 +244,21 @@ class PCA_from_scratch:
         # axis=0: 행(샘플) 방향으로 평균 → 각 특성의 평균값
         X_centered = X - self.mean_
         # 브로드캐스팅: (n, d) - (d,) → (n, d)
-        
+
         # ── 2단계: 공분산 행렬 계산 ─────────────────────
         # Σ = XᵀX / (n-1)
         # (d, n) @ (n, d) = (d, d) 행렬
         # n-1로 나누는 이유: 불편 추정량 (Bessel 보정)
         cov_matrix = (X_centered.T @ X_centered) / (n - 1)
         # cov_matrix.shape = (d, d)
-        
+
         # ── 3단계: 고유값 분해 ───────────────────────────
         # np.linalg.eigh: 대칭 행렬의 고유값·고유벡터 계산
         # eigh는 eig보다 수치적으로 안정적 (대칭 행렬 전용)
         eigenvalues, eigenvectors = np.linalg.eigh(cov_matrix)
         # eigenvalues:  (d,)    — 고유값 (오름차순 정렬됨)
         # eigenvectors: (d, d)  — 고유벡터 (열벡터)
-        
+
         # ── 4단계: 내림차순 정렬 ─────────────────────────
         # eigh는 오름차순으로 반환 → 큰 값부터 정렬해야 함
         # 분산(고유값)이 가장 큰 방향이 제1주성분!
@@ -267,22 +267,22 @@ class PCA_from_scratch:
         eigenvalues  = eigenvalues[idx]
         eigenvectors = eigenvectors[:, idx]
         # eigenvectors[:, idx]: 열 순서를 고유값 크기 순으로 재배열
-        
+
         # ── 5단계: 상위 k개 주성분 선택 ─────────────────
         self.components_ = eigenvectors[:, :self.n_components].T
         # eigenvectors의 앞 k개 열 선택 후 전치
         # shape: (d, k).T = (k, d) → 각 행이 하나의 주성분 벡터
-        
+
         self.explained_variance_ = eigenvalues[:self.n_components]
         # 상위 k개 고유값 = 각 주성분이 설명하는 분산
-        
+
         self.explained_variance_ratio_ = (
             self.explained_variance_ / eigenvalues.sum()
         )
         # 전체 분산 대비 각 주성분의 설명 비율
-        
+
         return self
-    
+
     def transform(self, X):
         """
         새 데이터를 주성분 공간으로 투영 (차원 축소)
@@ -292,7 +292,7 @@ class PCA_from_scratch:
         # 학습 때의 평균으로 중심화 (일관성 유지!)
         return X_centered @ self.components_.T
         # (n, d) @ (d, k) = (n, k) → 저차원 좌표
-    
+
     def inverse_transform(self, Z):
         """
         저차원 데이터를 원래 차원으로 복원 (근사값)

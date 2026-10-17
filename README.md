@@ -43,7 +43,7 @@
 
 ## 📘 책 단원별 소스코드 (`book/`)
 
-책 **[Zero to 머신러닝 딥러닝 Master](https://wikidocs.net/book/21464)** 원고의 코드 블록을 단원(절)별로 추출해 [`book/`](book/) 폴더에 정리했습니다. 코드가 있는 절 157개마다 실행 스크립트(`.py`), 블록당 셀 1개인 노트북(`.ipynb`), 설명 `README.md` 가 있고, 공통 패키지는 [`book/requirements.txt`](book/requirements.txt) 에 있습니다. CPU 검증 결과 105개 절이 그대로 실행되며, 나머지는 외부 데이터·API 키·앞 절 코드가 필요한 경우로 각 README 에 이유를 적었습니다.
+책 **[Zero to 머신러닝 딥러닝 Master](https://wikidocs.net/book/21464)** 원고의 코드 블록을 단원(절)별로 추출해 [`book/`](book/) 폴더에 정리했습니다. 코드가 있는 절 157개마다 실행 스크립트(`.py`), 블록당 셀 1개인 노트북(`.ipynb`), 설명 `README.md` 가 있고, 공통 패키지는 [`book/requirements.txt`](book/requirements.txt) 에 있습니다. CPU 검증 결과 104개 절이 그대로 실행되며, 나머지는 외부 데이터·API 키·앞 절 코드가 필요한 경우로 각 README 에 이유를 적었습니다.
 
 | 권 | 제목 | 코드가 있는 절 | 코드 블록 |
 |---|---|---|---|
