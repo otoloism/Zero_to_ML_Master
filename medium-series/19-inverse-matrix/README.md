@@ -11,7 +11,7 @@
 
 | | |
 |---|---|
-| 📝 Medium 글 | **https://medium.com/p/2be20cc74b45** (`https://medium.com/p/...`) |
+| 📝 Medium 글 | [https://medium.com/p/2be20cc74b45](https://medium.com/p/2be20cc74b45) |
 | 📘 책 원문 페이지 | [01-06-03 역행렬(Inverse Matrix) — 행렬의 나눗셈을 완성하다](https://wikidocs.net/439760) |
 | ✍️ 블로그 글 | [wikidocs.net/blog/@mldict](https://wikidocs.net/blog/@mldict/) (이 편의 블로그 글은 아직 없음) |
 
