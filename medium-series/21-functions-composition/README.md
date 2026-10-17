@@ -11,7 +11,7 @@
 
 | | |
 |---|---|
-| 📝 Medium 글 | **TODO: Medium 게시 후 URL 입력** (`https://medium.com/p/...`) |
+| 📝 Medium 글 | **https://medium.com/p/3fe59908fc90** (`https://medium.com/p/...`) |
 | 📘 책 원문 페이지 | [01-08 함수와 합성함수 — 딥러닝의 구조](https://wikidocs.net/439745) |
 | ✍️ 블로그 글 | [wikidocs.net/blog/@mldict](https://wikidocs.net/blog/@mldict/) (이 편의 블로그 글은 아직 없음) |
 
