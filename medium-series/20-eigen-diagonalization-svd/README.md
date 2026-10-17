@@ -11,7 +11,7 @@ np.linalg.eig 로 고유값·고유벡터를 구해 Av = λv 를 검증하고, A
 
 | | |
 |---|---|
-| 📝 Medium 글 | **TODO: Medium 게시 후 URL 입력** (`https://medium.com/p/...`) |
+| 📝 Medium 글 | [https://medium.com/p/0a0c4a3eb6b7](https://medium.com/p/0a0c4a3eb6b7) |
 | 📘 책 원문 페이지 | [01-07 고유값·고유벡터·대각화·SVD](https://wikidocs.net/439755) |
 | ✍️ 블로그 글 | [wikidocs.net/blog/@mldict](https://wikidocs.net/blog/@mldict/) (이 편의 블로그 글은 아직 없음) |
 
