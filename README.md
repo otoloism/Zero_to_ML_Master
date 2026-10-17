@@ -35,6 +35,8 @@
 | 24 · 2부 | 적분 — 리만 합·사다리꼴·확률·기댓값·몬테카를로 | [24-2-integral-probability-expectation](medium-series/24-2-integral-probability-expectation/) | TODO: 게시 후 URL | [01-11](https://wikidocs.net/439757) |
 | 25 · 1부 | 확률과 통계 — 평균·분산(ddof)·공분산·왜도·소프트맥스 | [25-1-descriptive-statistics](medium-series/25-1-descriptive-statistics/) | TODO: 게시 후 URL | [01-12](https://wikidocs.net/439756) |
 | 25 · 2부 | 정규분포·MLE·t-검정·신뢰구간·데이터 진단 | [25-2-normal-bayes-mle-testing](medium-series/25-2-normal-bayes-mle-testing/) | TODO: 게시 후 URL | [01-12](https://wikidocs.net/439756) |
+| 26 · 1부 | ML 수학 총정리 — NumPy 미니 신경망으로 XOR 풀기(순전파·손실·역전파·업데이트) | [26-1-xor-mini-neural-net](medium-series/26-1-xor-mini-neural-net/) | TODO: 게시 후 URL | [01-13](https://wikidocs.net/439749) |
+| 26 · 2부 | NumPy 60줄 → PyTorch 15줄 (nn.Sequential·CrossEntropyLoss·backward) | [26-2-numpy-to-pytorch](medium-series/26-2-numpy-to-pytorch/) | TODO: 게시 후 URL | [01-13](https://wikidocs.net/439749) |
 
 - 📘 책 (WikiDocs): https://wikidocs.net/book/21464
 - 🏠 홈페이지: https://mldict.net
