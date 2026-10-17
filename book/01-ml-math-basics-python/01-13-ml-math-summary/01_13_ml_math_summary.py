@@ -109,3 +109,137 @@ for epoch in range(300):
     optimizer.zero_grad()       # ⚠️ 이전 그래디언트 청소 (필수!)
     loss.backward()             # ③ 역전파   ← 우리가 짠 5줄이 이 한 줄
     optimizer.step()            # ④ 업데이트 ← W -= lr * gW
+
+
+# %% [Block 3] [추가·저장소 전용] 실습 8 풀이 — 죽은 뉴런 세기 (책 본문에는 문장만 실림, 10단계에서 X·T 가 torch 텐서로 바뀌었으므로 NumPy 용 X·T 를 다시 정의)
+# ── 10단계(Block 2)에서 X, T 를 torch 텐서로 덮어썼으므로 7단계 NumPy 용 X, T 를 다시 정의합니다 ──
+import numpy as np
+X = np.array([[0,0], [0,1], [1,0], [1,1]], dtype=float)
+T = np.array([[1,0], [0,1], [0,1], [1,0]], dtype=float)
+
+# 실습 8 — 죽은 뉴런 세기 (7단계 MiniNeuralNet, X, T가 정의된 뒤 실행)
+def train_xor(lr, seed=0, epochs=300):
+    net = MiniNeuralNet(2, 8, 2, seed=seed)
+    for epoch in range(epochs):
+        total = 0.0
+        for x_i, t_i in zip(X, T):
+            net.forward_pass(x_i)
+            total += net.compute_loss(t_i)
+            net.backward_and_update(t_i, lr=lr)
+    return net, total / len(X)
+
+for lr in [0.3, 3.0]:
+    net, loss = train_xor(lr)
+    Z1 = X @ net.W1 + net.b1                    # (4, 8): 네 입력 × 은닉 뉴런 8개
+    dead = np.all(Z1 <= 0, axis=0)              # 네 입력 모두에서 0 이하인 뉴런 = 죽은 뉴런
+    print(f"lr={lr} | 최종 평균 손실 {loss:.4f} | 죽은 뉴런 {dead.sum()}/8 → {np.where(dead)[0].tolist()}")
+
+
+# %% [Block 4] [추가·저장소 전용] 🐞 디버깅 팁 — 죽은 뉴런 수 한 줄 (본문 인라인 코드의 실행 예시)
+# 바로 위 실습 8 루프의 마지막 net(lr=3.0)에서 가중치를 꺼내 한 줄 공식을 그대로 확인합니다
+W1, b1 = net.W1, net.b1
+# 죽은 뉴런 수 = 네 입력 모두에서 z1 ≤ 0 인 은닉 뉴런 개수 (NumPy 7단계 기준)
+dead_count = np.all(X @ W1 + b1 <= 0, axis=0).sum()      # 클래스 안이라면 net.W1, net.b1
+print("죽은 뉴런 수:", dead_count, "/ 8")
+
+
+# %% [Block 5] 01-13 연습문제 Q14 — ReLU vs LeakyReLU vs He 초기화 (NumPy, lr 0.5 / 3.0)
+import numpy as np
+# ⚠️ 7단계의 MiniNeuralNet 클래스와 X, T를 먼저 실행해 두세요.
+
+class MiniNeuralNet2(MiniNeuralNet):
+    """7단계 신경망에 스위치 두 개만 추가: act(활성화 함수), init(초기화 방식)"""
+    def __init__(self, n_in, n_hidden, n_out, seed=0, act="relu", init="normal", alpha=0.01):
+        super().__init__(n_in, n_hidden, n_out, seed)
+        self.act, self.alpha = act, alpha
+        if init == "he":                                  # He 초기화: 표준편차 = √(2 / 입력 개수)
+            rng = np.random.default_rng(seed)
+            self.W1 = rng.normal(0, np.sqrt(2 / n_in), (n_in, n_hidden))
+            self.W2 = rng.normal(0, np.sqrt(2 / n_hidden), (n_hidden, n_out))
+
+    def relu(self, x):                                    # forward_pass가 이 함수를 부릅니다
+        if self.act == "leaky":
+            return np.where(x > 0, x, self.alpha * x)     # 음수도 0.01배만큼은 통과
+        return np.maximum(0, x)
+
+    def backward_and_update(self, t, lr=0.3):
+        gz2 = self.y_hat - t
+        gW2 = np.outer(self.h1, gz2)
+        # TODO ① 문지기(활성화 미분): ReLU는 0 또는 1, LeakyReLU는 alpha 또는 1
+        d = (self.z1 > 0) if self.act == "relu" else np.where(self.z1 > 0, 1.0, self.alpha)
+        gz1 = (self.W2 @ gz2) * d
+        gW1 = np.outer(self.x, gz1)
+        self.W2 -= lr * gW2;  self.b2 -= lr * gz2
+        self.W1 -= lr * gW1;  self.b1 -= lr * gz1
+
+def count_dead(net, X):
+    """네 입력 모두에서 z1 ≤ 0 인 은닉 뉴런 수 = 한 번도 '일'하지 않은 뉴런"""
+    Z1 = X @ net.W1 + net.b1                              # (4, 8)
+    return int(np.all(Z1 <= 0, axis=0).sum())
+
+def train(lr, act, init, seed=0, epochs=300):
+    net = MiniNeuralNet2(2, 8, 2, seed=seed, act=act, init=init)
+    for epoch in range(epochs):
+        total = 0.0
+        for x_i, t_i in zip(X, T):
+            net.forward_pass(x_i)
+            total += net.compute_loss(t_i)
+            net.backward_and_update(t_i, lr=lr)
+    return total / len(X), count_dead(net, X)
+
+for lr in [0.5, 3.0]:
+    for act, init in [("relu", "normal"), ("leaky", "normal"), ("relu", "he"), ("leaky", "he")]:
+        results = [train(lr, act, init, seed=s) for s in range(10)]
+        # TODO ② 시드 10개 중 '성공(손실 < 0.05)' 횟수와 평균 죽은 뉴런 수를 출력해 보세요
+        ok = sum(loss < 0.05 for loss, dead in results)
+        avg_dead = np.mean([dead for loss, dead in results])
+        print(f"lr={lr:<4} {act:>5} + {init:<6} | 성공 {ok}/10 | 평균 죽은 뉴런 {avg_dead:.1f}/8")
+
+
+# %% [Block 6] 01-13 연습문제 Q14 — PyTorch 버전
+import torch
+import torch.nn as nn
+
+X = torch.tensor([[0.,0.], [0.,1.], [1.,0.], [1.,1.]])
+T = torch.tensor([0, 1, 1, 0])
+
+def make_model(act="relu", init="default", seed=0):
+    torch.manual_seed(seed)
+    act_layer = nn.LeakyReLU(0.01) if act == "leaky" else nn.ReLU()   # 🔨 활성화 교체는 한 줄
+    model = nn.Sequential(nn.Linear(2, 8), act_layer, nn.Linear(8, 2))
+    if init == "he":                                                  # 🎲 He(Kaiming) 초기화
+        nn.init.kaiming_normal_(model[0].weight, nonlinearity="relu")
+        nn.init.zeros_(model[0].bias)
+    return model
+
+def train(lr, act, init, seed=0, epochs=300):
+    model = make_model(act, init, seed)
+    loss_fn = nn.CrossEntropyLoss()
+    optimizer = torch.optim.SGD(model.parameters(), lr=lr)
+    for epoch in range(epochs):
+        loss = loss_fn(model(X), T)
+        optimizer.zero_grad(); loss.backward(); optimizer.step()
+    with torch.no_grad():
+        dead = (model[0](X) <= 0).all(dim=0).sum().item()   # 네 입력 모두에서 꺼진 뉴런 수
+    return loss.item(), dead
+
+for lr in [0.5, 3.0]:
+    for act, init in [("relu", "default"), ("leaky", "default"), ("relu", "he"), ("leaky", "he")]:
+        results = [train(lr, act, init, seed=s) for s in range(10)]
+        ok = sum(l < 0.05 for l, d in results)
+        print(f"lr={lr:<4} {act:>5} + {init:<7} | 성공 {ok}/10 | 평균 죽은 뉴런 {sum(d for l, d in results)/10:.1f}/8")
+
+
+# %% [Block 7] [추가·저장소 전용] 🔁 PyTorch에서는 처방도 한 줄 — LeakyReLU · He(Kaiming) 초기화 (10단계 모델에 적용하는 예시)
+import torch.nn as nn
+
+# ② ReLU → LeakyReLU (미분은 오토그라드가 처리)
+model = nn.Sequential(
+    nn.Linear(2, 8),
+    nn.LeakyReLU(0.01),      # 기존: nn.ReLU()
+    nn.Linear(8, 2)
+)
+
+# ③ He(Kaiming) 초기화 — 첫 번째 Linear 층에 적용
+nn.init.kaiming_normal_(model[0].weight, nonlinearity="relu")
+nn.init.zeros_(model[0].bias)
