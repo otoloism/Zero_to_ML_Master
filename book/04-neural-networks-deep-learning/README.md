@@ -33,7 +33,7 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;04-03-03 | [고차미분계산 (25 36단계) —헤시안과 뉴턴법](04-03-dezero-framework/04-03-03-higher-order-diff-steps-25-36/) | 7 | 🧩 문맥 필요(조각) |
 | &nbsp;&nbsp;&nbsp;&nbsp;04-03-04 | [신경망 만들기 (37 51단계) —PyTorchnn Module 직접 구현](04-03-dezero-framework/04-03-04-neural-net-steps-37-51/) | 14 | 🧩 문맥 필요(조각) |
 | &nbsp;&nbsp;&nbsp;&nbsp;04-03-05 | [DeZero의 도전 (52 60단계) — GPU·CNN·RNN까지](04-03-dezero-framework/04-03-05-gpu-cnn-rnn-steps-52-60/) | 10 | 🧩 문맥 필요(조각) |
-| &nbsp;&nbsp;&nbsp;&nbsp;04-03-06 | [인플레이스 연산 · get_item 함수 · 구글 콜랩](04-03-dezero-framework/04-03-06-inplace-getitem-colab/) | 11 | 🧩 문맥 필요(조각) |
+| &nbsp;&nbsp;&nbsp;&nbsp;04-03-06 | [인플레이스 연산 · get_item 함수 · 구글 콜랩](04-03-dezero-framework/04-03-06-inplace-getitem-colab/) | 11 | ❌ 실행 오류 |
 | 04-04 | [순환 신경망과 자연어 처리](04-04-rnn-nlp/) | — | (하위 절 참고) |
 | &nbsp;&nbsp;&nbsp;&nbsp;04-04-01 | [신경망 복습](04-04-rnn-nlp/04-04-01-nn-review/) | 6 | 🧩 문맥 필요(조각) |
 | &nbsp;&nbsp;&nbsp;&nbsp;04-04-02 | [자연어와 단어의 분산 표현 — 의미를벡터로](04-04-rnn-nlp/04-04-02-distributed-representation/) | 5 | ✅ 실행 OK |
@@ -64,7 +64,7 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;04-06-08 | [확산 모델이론 —VAE에서 Diffusion으로](04-06-generative-models/04-06-08-diffusion-theory/) | 3 | ✅ 실행 OK |
 | &nbsp;&nbsp;&nbsp;&nbsp;04-06-09 | [확산 모델구현 —U-Net과 데이터 생성](04-06-generative-models/04-06-09-diffusion-unet/) | 10 | 🧩 문맥 필요(조각) |
 | &nbsp;&nbsp;&nbsp;&nbsp;04-06-10 | [확산 모델응용 — Classifier-Free Guidance와Stable Diffusion](04-06-generative-models/04-06-10-cfg-stable-diffusion/) | 8 | 🧩 문맥 필요(조각) |
-| &nbsp;&nbsp;&nbsp;&nbsp;04-06-11 | [다변량MLE도출 ·옌센 부등식· 계층형VAE· 수식 기호 목록](04-06-generative-models/04-06-11-multivariate-mle-jensen-hvae/) | 1 | ✅ 실행 OK |
+| &nbsp;&nbsp;&nbsp;&nbsp;04-06-11 | [다변량MLE도출 ·옌센 부등식· 계층형VAE· 수식 기호 목록](04-06-generative-models/04-06-11-multivariate-mle-jensen-hvae/) | 1 | 🧩 문맥 필요(조각) |
 | 04-07 | [대규모 언어 모델(LLM) 이해하기 — GPT의 시대는 무엇이 다른가](04-07-llm/) | — | (하위 절 참고) |
 | &nbsp;&nbsp;&nbsp;&nbsp;04-07-01 | [API 키는 환경변수로 등록 (자세한 설정은 04-08장에서 다룹니다)](04-07-llm/04-07-01-llm-vs-classic-lm/) | 4 | ⏭️ 외부 요구사항 |
 | &nbsp;&nbsp;&nbsp;&nbsp;04-07-02 | [우리는 GPU도, 학습 데이터도, 파라미터 튜닝도 필요 없습니다.](04-07-llm/04-07-02-why-llm-challenges/) | 2 | 🧩 문맥 필요(조각) |

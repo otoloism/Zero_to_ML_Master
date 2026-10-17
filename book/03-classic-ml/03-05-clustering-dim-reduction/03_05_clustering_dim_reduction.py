@@ -112,7 +112,7 @@ for k in range(K):
     pts = X[labels == k]
     plt.scatter(pts[:, 0], pts[:, 1],
                 c=colors[k], alpha=0.6, s=50,
-                label=f'클러스터 {k+1}')
+                label=ff'클러스터 {k+1}')
     plt.scatter(centroids[k, 0], centroids[k, 1],
                 c=colors[k], marker='X', s=200,
                 edgecolor='black', linewidth=1.5, zorder=5)
@@ -158,7 +158,7 @@ for k in k_range:
     inertias.append(km.inertia_)           # inertia_: 최종 왜곡 비용 J
     score = silhouette_score(X_scaled, km.labels_)
     silhouettes.append(score)
-    print(f"K={k}: Inertia={km.inertia_:.1f}, Silhouette={score:.3f}")
+    print(ff"K={k}: Inertia={km.inertia_:.1f}, Silhouette={score:.3f}")
 
 # ─────────────────────────────────────────────
 # 3단계: 최적 K=3으로 최종 클러스터링
@@ -188,7 +188,7 @@ axes[0].set_ylabel('왜곡 비용 (Inertia)'); axes[0].legend()
 for k in range(best_k):
     mask = labels == k
     axes[1].scatter(X_scaled[mask, 0], X_scaled[mask, 2],
-                   c=colors[k], alpha=0.7, s=50, label=f'클러스터{k+1}')
+                   c=colors[k], alpha=0.7, s=50, label=ff'클러스터{k+1}')
 axes[1].scatter(centers[:, 0], centers[:, 2], c='black',
                marker='X', s=200, zorder=5, label='센트로이드')
 axes[1].set_title('K-평균 클러스터링 (K=3)')
@@ -213,7 +213,7 @@ import numpy as np
 class PCA_from_scratch:
     """
     PCA(주성분분석) 직접 구현 클래스
-    
+
     학습 순서:
     1. 표준화 (fit)
     2. 공분산 행렬 계산
@@ -221,14 +221,14 @@ class PCA_from_scratch:
     4. 상위 k개 주성분 선택
     5. 투영 (transform) / 복원 (inverse_transform)
     """
-    
+
     def __init__(self, n_components):
         self.n_components = n_components   # 축소할 목표 차원 수
         self.components_ = None            # 주성분 벡터들 (저장 공간)
         self.explained_variance_ = None    # 각 주성분의 분산(고유값)
         self.explained_variance_ratio_ = None  # 설명 분산 비율
         self.mean_ = None                  # 학습 데이터의 평균 (복원시 필요)
-    
+
     def fit(self, X):
         """
         PCA 학습: 주성분 방향을 찾습니다
@@ -236,7 +236,7 @@ class PCA_from_scratch:
         """
         n, d = X.shape
         # n = 샘플 수, d = 특성(차원) 수
-        
+
         # ── 1단계: 평균 중심화 (Mean Centering) ──────────
         # 각 특성의 평균을 빼서 데이터 중심을 원점으로 이동
         # 이 단계가 없으면 공분산이 아닌 상관행렬이 됩니다
@@ -244,21 +244,21 @@ class PCA_from_scratch:
         # axis=0: 행(샘플) 방향으로 평균 → 각 특성의 평균값
         X_centered = X - self.mean_
         # 브로드캐스팅: (n, d) - (d,) → (n, d)
-        
+
         # ── 2단계: 공분산 행렬 계산 ─────────────────────
         # Σ = XᵀX / (n-1)
         # (d, n) @ (n, d) = (d, d) 행렬
         # n-1로 나누는 이유: 불편 추정량 (Bessel 보정)
         cov_matrix = (X_centered.T @ X_centered) / (n - 1)
         # cov_matrix.shape = (d, d)
-        
+
         # ── 3단계: 고유값 분해 ───────────────────────────
         # np.linalg.eigh: 대칭 행렬의 고유값·고유벡터 계산
         # eigh는 eig보다 수치적으로 안정적 (대칭 행렬 전용)
         eigenvalues, eigenvectors = np.linalg.eigh(cov_matrix)
         # eigenvalues:  (d,)    — 고유값 (오름차순 정렬됨)
         # eigenvectors: (d, d)  — 고유벡터 (열벡터)
-        
+
         # ── 4단계: 내림차순 정렬 ─────────────────────────
         # eigh는 오름차순으로 반환 → 큰 값부터 정렬해야 함
         # 분산(고유값)이 가장 큰 방향이 제1주성분!
@@ -267,22 +267,22 @@ class PCA_from_scratch:
         eigenvalues  = eigenvalues[idx]
         eigenvectors = eigenvectors[:, idx]
         # eigenvectors[:, idx]: 열 순서를 고유값 크기 순으로 재배열
-        
+
         # ── 5단계: 상위 k개 주성분 선택 ─────────────────
         self.components_ = eigenvectors[:, :self.n_components].T
         # eigenvectors의 앞 k개 열 선택 후 전치
         # shape: (d, k).T = (k, d) → 각 행이 하나의 주성분 벡터
-        
+
         self.explained_variance_ = eigenvalues[:self.n_components]
         # 상위 k개 고유값 = 각 주성분이 설명하는 분산
-        
+
         self.explained_variance_ratio_ = (
             self.explained_variance_ / eigenvalues.sum()
         )
         # 전체 분산 대비 각 주성분의 설명 비율
-        
+
         return self
-    
+
     def transform(self, X):
         """
         새 데이터를 주성분 공간으로 투영 (차원 축소)
@@ -292,7 +292,7 @@ class PCA_from_scratch:
         # 학습 때의 평균으로 중심화 (일관성 유지!)
         return X_centered @ self.components_.T
         # (n, d) @ (d, k) = (n, k) → 저차원 좌표
-    
+
     def inverse_transform(self, Z):
         """
         저차원 데이터를 원래 차원으로 복원 (근사값)
@@ -321,7 +321,7 @@ print("누적 설명 분산 비율:", pca.explained_variance_ratio_.sum())
 
 # 복원 오차 계산: 원본과 복원본의 차이
 reconstruction_error = np.mean((X - X_restored) ** 2)
-print(f"\n복원 오차(MSE): {reconstruction_error:.4f}")
+print(ff"\n복원 오차(MSE): {reconstruction_error:.4f}")
 
 
 # %% [Block 5] ① scikit-learn PCA + 붓꽃 전체 실습
@@ -357,7 +357,7 @@ cumulative_evr = np.cumsum(evr)
 
 print("각 PC의 설명 분산 비율:")
 for i, (r, cr) in enumerate(zip(evr, cumulative_evr)):
-    print(f"  PC{i+1}: {r:.4f} ({r*100:.2f}%)  누적: {cr*100:.2f}%")
+    print(ff"  PC{i+1}: {r:.4f} ({r*100:.2f}%)  누적: {cr*100:.2f}%")
 
 # ─────────────────────────────────────────────
 # 3단계: 2D PCA — 시각화를 위해 2개 주성분으로 축소
@@ -367,8 +367,8 @@ X_pca = pca_2d.fit_transform(X_scaled)
 # fit_transform = fit(학습) + transform(변환)을 한 번에
 # X_pca.shape = (150, 2) — 4D → 2D 압축 완료
 
-print(f"\n2D PCA 설명 분산 비율: {pca_2d.explained_variance_ratio_}")
-print(f"누적: {pca_2d.explained_variance_ratio_.sum():.4f}")
+print(ff"\n2D PCA 설명 분산 비율: {pca_2d.explained_variance_ratio_}")
+print(ff"누적: {pca_2d.explained_variance_ratio_.sum():.4f}")
 
 # ─────────────────────────────────────────────
 # 4단계: 주성분 로딩(적재값) 분석
@@ -381,7 +381,7 @@ feature_names = iris.feature_names
 print("\n주성분 로딩 행렬 (어떤 특성이 중요한가?):")
 print(f"{'특성':30s}  PC1     PC2")
 for name, l1, l2 in zip(feature_names, loadings[0], loadings[1]):
-    print(f"  {name:30s}: {l1:+.3f}   {l2:+.3f}")
+    print(ff"  {name:30s}: {l1:+.3f}   {l2:+.3f}")
 
 # ─────────────────────────────────────────────
 # 5단계: 복원 및 복원 오차 계산
@@ -389,7 +389,7 @@ for name, l1, l2 in zip(feature_names, loadings[0], loadings[1]):
 X_restored = pca_2d.inverse_transform(X_pca)
 # 2D → 4D 복원 (근사값이므로 완전 복원 불가)
 recon_error = np.mean((X_scaled - X_restored) ** 2)
-print(f"\n복원 오차(MSE): {recon_error:.4f}")
+print(ff"\n복원 오차(MSE): {recon_error:.4f}")
 
 # ─────────────────────────────────────────────
 # 6단계: 시각화 4종
@@ -426,7 +426,7 @@ ax.set_xticks(range(4)); ax.set_xticklabels(['꽃받침\n길이','꽃받침\n너
 ax.set_yticks([0, 1]); ax.set_yticklabels(['PC1', 'PC2'])
 for i in range(2):
     for j in range(4):
-        ax.text(j, i, f'{loadings[i,j]:+.2f}', ha='center', va='center', fontsize=11)
+        ax.text(j, i, ff'{loadings[i,j]:+.2f}', ha='center', va='center', fontsize=11)
 plt.colorbar(im, ax=ax); ax.set_title('주성분 로딩 (특성 기여도)')
 
 # 그래프 4: 원본 vs 복원 (첫 번째 특성 비교)
@@ -472,5 +472,5 @@ X_pca = pipeline.named_steps['pca'].transform(
 from sklearn.metrics import adjusted_rand_score
 ari = adjusted_rand_score(y, labels)
 # ARI: -1~1, 1=완벽 일치, 0=무작위, 레이블 순서 무관
-print(f"ARI(조정 랜드 지수): {ari:.3f}")
+print(ff"ARI(조정 랜드 지수): {ari:.3f}")
 # 1에 가까울수록 클러스터링이 실제 품종과 잘 일치

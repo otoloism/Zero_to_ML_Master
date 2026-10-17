@@ -8,11 +8,6 @@
 책에 실린 코드 블록을 순서대로 모은 스크립트입니다. (# %% 셀 구분은 VS Code / Jupytext 에서 셀로 인식됩니다)
 """
 
-# %% [Block 0] [추가] 책에서는 앞 절에서 import 한 모듈 — 단독 실행을 위해 보충 (원문에는 없음)
-import numpy as np
-import torch
-
-
 # %% [Block 1] 01-02-D 🔵 🚀 ML 공식 100가지 낭독 훈련 — 읽는 법·기호·뜻·용도·파이썬
 theta = theta - alpha * grad          # NumPy
 optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
@@ -45,9 +40,8 @@ torch.optim.Adam(model.parameters(), lr=1e-3, eps=1e-8)
 
 
 # %% [Block 7] 01-02-D 🔵 🚀 ML 공식 100가지 낭독 훈련 — 읽는 법·기호·뜻·용도·파이썬
-# ⚠️ 이 블록은 앞뒤 문맥 없이 단독으로는 문법 오류가 나는 코드 조각이라 주석 처리했습니다 (노트북에는 원문 그대로).
-# if np.linalg.norm(grad) < 1e-5:
-#     break                              # 수렴했으므로 학습 종료
+if np.linalg.norm(grad) < 1e-5:
+    break                              # 수렴했으므로 학습 종료
 
 
 # %% [Block 8] 01-02-D 🔵 🚀 ML 공식 100가지 낭독 훈련 — 읽는 법·기호·뜻·용도·파이썬

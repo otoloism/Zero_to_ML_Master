@@ -29,7 +29,7 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;03-04-04 | [신경망의 등장과 모델 표현](03-04-regularization-nn-basics/03-04-04-neural-network-representation/) | 2 | ✅ 실행 OK |
 | &nbsp;&nbsp;&nbsp;&nbsp;03-04-05 | [신경망으로 논리 게이트 만들기](03-04-regularization-nn-basics/03-04-05-nn-logic-gates/) | 2 | ✅ 실행 OK |
 | &nbsp;&nbsp;&nbsp;&nbsp;03-04-06 | [신경망 비용 함수와 역전파](03-04-regularization-nn-basics/03-04-06-nn-cost-backprop/) | 2 | ✅ 실행 OK |
-| 03-05 | [1단계: 데이터 생성](03-05-clustering-dim-reduction/) | 6 | ✅ 실행 OK |
+| 03-05 | [1단계: 데이터 생성](03-05-clustering-dim-reduction/) | 6 | ❌ 실행 오류 |
 | &nbsp;&nbsp;&nbsp;&nbsp;03-05-01 | [K-평균 알고리즘 개념과 절차](03-05-clustering-dim-reduction/03-05-01-kmeans-concept/) | 2 | ✅ 실행 OK |
 | &nbsp;&nbsp;&nbsp;&nbsp;03-05-02 | [최적화 목표 — 왜곡 비용함수](03-05-clustering-dim-reduction/03-05-02-distortion-cost/) | 1 | ✅ 실행 OK |
 | &nbsp;&nbsp;&nbsp;&nbsp;03-05-03 | [무작위 초기화와 지역 최적해](03-05-clustering-dim-reduction/03-05-03-random-init-local-optima/) | 1 | ✅ 실행 OK |
@@ -50,7 +50,7 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;03-07-02 | [콘텐츠 기반 추천 시스템 (Content Based Recommendation)](03-07-recommender-systems/03-07-02-content-based-recsys/) | 8 | ✅ 실행 OK |
 | &nbsp;&nbsp;&nbsp;&nbsp;03-07-03 | [협업 필터링 (Collaborative Filtering)](03-07-recommender-systems/03-07-03-collaborative-filtering/) | 7 | ✅ 실행 OK |
 | &nbsp;&nbsp;&nbsp;&nbsp;03-07-04 | [저차원 행렬분해와 평균 정규화 (Low Rank Matrix Factorization & Mean Normalization)](03-07-recommender-systems/03-07-04-low-rank-mean-normalization/) | 7 | ✅ 실행 OK |
-| &nbsp;&nbsp;&nbsp;&nbsp;03-07-05 | [콘텐츠 기반 추천 시스템 실습 (Content Based Recommendation with TMDB 5000)](03-07-recommender-systems/03-07-05-content-based-practice/) | 17 | ⏭️ 외부 요구사항 |
+| &nbsp;&nbsp;&nbsp;&nbsp;03-07-05 | [콘텐츠 기반 추천 시스템 실습 (Content Based Recommendation with TMDB 5000)](03-07-recommender-systems/03-07-05-content-based-practice/) | 17 | ❌ 실행 오류 |
 | &nbsp;&nbsp;&nbsp;&nbsp;03-07-06 | [협업 필터링 실습 — SGD 행렬 분해 (Matrix Factorization with Stochastic Gradient …](03-07-recommender-systems/03-07-06-cf-sgd-matrix-factorization/) | 15 | ⏭️ 외부 요구사항 |
 | 03-08 | [정규화 심화 및 대규모 학습 (Regularization & Large Scale Machine Learning)](03-08-advanced-regularization-large-scale/) | — | (하위 절 참고) |
 | &nbsp;&nbsp;&nbsp;&nbsp;03-08-01 | [L1 노름과 L2 노름 (L1 Norm & L2 Norm)](03-08-advanced-regularization-large-scale/03-08-01-l1-l2-norms/) | 5 | ✅ 실행 OK |

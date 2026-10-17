@@ -479,7 +479,7 @@ print(gx2)
 # ① 먼저: 런타임 → 런타임 유형 변경 → 하드웨어 가속기를 GPU로 설정!
 
 # ② 느낌표(!)를 붙이면 파이썬이 아닌 터미널 명령을 실행합니다.
-# !pip install dezero
+!pip install dezero
 
 # ③ 설치 확인
 import dezero

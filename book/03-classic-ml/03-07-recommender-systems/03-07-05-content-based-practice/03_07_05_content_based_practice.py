@@ -20,8 +20,8 @@ import warnings                         # 경고 메시지 제어
 
 
 # %% [Block 2] 1단원 — 실습 환경 세팅
-# %matplotlib inline
-# %config InlineBackend.figure_format = 'retina'    # 그래프를 고해상도로
+%matplotlib inline
+%config InlineBackend.figure_format = 'retina'    # 그래프를 고해상도로
 
 mpl.rc('font', family='NanumGothic')      # 한글 폰트 설정 (없으면 한글이 □□로 깨진다)
 mpl.rc('axes', unicode_minus=False)       # 마이너스 기호가 깨지지 않게
