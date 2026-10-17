@@ -11,7 +11,7 @@
 
 | | |
 |---|---|
-| 📝 Medium 글 | **TODO: Medium 게시 후 URL 입력** (`https://medium.com/p/...`) |
+| 📝 Medium 글 | [https://medium.com/p/7baa1d55a977](https://medium.com/p/7baa1d55a977) |
 | 📘 책 원문 페이지 | [01-06-02 행렬식(Determinant) — 정사각행렬 속에 숨은 넓이와 부피](https://wikidocs.net/439761) |
 | ✍️ 블로그 글 | [wikidocs.net/blog/@mldict](https://wikidocs.net/blog/@mldict/) (이 편의 블로그 글은 아직 없음) |
 
