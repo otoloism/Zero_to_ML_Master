@@ -29,7 +29,7 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;03-04-04 | [신경망의 등장과 모델 표현](03-04-regularization-nn-basics/03-04-04-neural-network-representation/) | 2 | ✅ 실행 OK |
 | &nbsp;&nbsp;&nbsp;&nbsp;03-04-05 | [신경망으로 논리 게이트 만들기](03-04-regularization-nn-basics/03-04-05-nn-logic-gates/) | 2 | ✅ 실행 OK |
 | &nbsp;&nbsp;&nbsp;&nbsp;03-04-06 | [신경망 비용 함수와 역전파](03-04-regularization-nn-basics/03-04-06-nn-cost-backprop/) | 2 | ✅ 실행 OK |
-| 03-05 | [1단계: 데이터 생성](03-05-clustering-dim-reduction/) | 6 | ❌ 실행 오류 |
+| 03-05 | [1단계: 데이터 생성](03-05-clustering-dim-reduction/) | 6 | ✅ 실행 OK |
 | &nbsp;&nbsp;&nbsp;&nbsp;03-05-01 | [K-평균 알고리즘 개념과 절차](03-05-clustering-dim-reduction/03-05-01-kmeans-concept/) | 2 | ✅ 실행 OK |
 | &nbsp;&nbsp;&nbsp;&nbsp;03-05-02 | [최적화 목표 — 왜곡 비용함수](03-05-clustering-dim-reduction/03-05-02-distortion-cost/) | 1 | ✅ 실행 OK |
 | &nbsp;&nbsp;&nbsp;&nbsp;03-05-03 | [무작위 초기화와 지역 최적해](03-05-clustering-dim-reduction/03-05-03-random-init-local-optima/) | 1 | ✅ 실행 OK |
