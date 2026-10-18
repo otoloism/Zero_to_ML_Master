@@ -11,7 +11,7 @@ f(x, y) = x² + 2y² 의 손실과 그래디언트 ∇f = (2x, 4y) 를 구현하
 
 | | |
 |---|---|
-| 📝 Medium 글 | **TODO: Medium 게시 후 URL 입력** (`https://medium.com/p/...`) |
+| 📝 Medium 글 | [Medium에서 읽기](https://medium.com/p/62c7571f171a) |
 | 📘 책 원문 페이지 | [01-10 편미분·그래디언트·경사하강법 (1부)](https://wikidocs.net/439754) |
 | ✍️ 블로그 글 | [wikidocs.net/blog/@mldict](https://wikidocs.net/blog/@mldict/) (이 편의 블로그 글은 아직 없음) |
 
